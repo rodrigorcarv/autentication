@@ -3,6 +3,7 @@
 .classpath
 bin/
 gradle/
+target/
 .project
 
 
