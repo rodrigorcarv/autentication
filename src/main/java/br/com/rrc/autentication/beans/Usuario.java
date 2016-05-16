@@ -3,7 +3,14 @@ package br.com.rrc.autentication.beans;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Usuario {
@@ -23,10 +30,16 @@ public class Usuario {
 		this.telefones = telefones;
 	}
 
+	@Id
+	@SequenceGenerator(name="USUARIO_GENERATOR",sequenceName="SEQ_USUARIO",allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="USUARIO_GENERATOR")
 	private Long id;
+	
 	private String nome;
 	private String email;
 	private String senha;
+
+	@OneToMany(mappedBy = "usuario",targetEntity = Telefone.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Set<Telefone> telefones;
 
 	public String getSenha() {
