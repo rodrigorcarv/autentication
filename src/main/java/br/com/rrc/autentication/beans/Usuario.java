@@ -4,6 +4,7 @@ package br.com.rrc.autentication.beans;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -12,9 +13,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Usuario {
 
+	public Usuario () {}
+	
 	public Usuario(String nome, String senha, String email) {
 		super();
 		this.nome = nome;
@@ -34,7 +40,6 @@ public class Usuario {
 	@SequenceGenerator(name="USUARIO_GENERATOR",sequenceName="SEQ_USUARIO",allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="USUARIO_GENERATOR")
 	private Long id;
-	
 	private String nome;
 	private String email;
 	private String senha;

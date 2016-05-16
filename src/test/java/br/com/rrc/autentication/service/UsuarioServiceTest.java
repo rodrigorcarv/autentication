@@ -14,6 +14,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import br.com.rrc.autentication.AutenticationApplication;
 import br.com.rrc.autentication.beans.Usuario;
 import br.com.rrc.autentication.repository.UsuarioRepository;
+import br.com.rrc.autentication.service.impl.UsuarioServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = AutenticationApplication.class)
@@ -21,7 +22,7 @@ import br.com.rrc.autentication.repository.UsuarioRepository;
 public class UsuarioServiceTest {
 
 	@Spy
-	private UsuarioService usuarioService; 
+	private UsuarioServiceImpl usuarioService; 
 	
 	@Mock
 	private UsuarioRepository usuarioRepository;
@@ -43,4 +44,5 @@ public class UsuarioServiceTest {
 		
 		usuarioService.save(usuario);
 	}
+	
 }

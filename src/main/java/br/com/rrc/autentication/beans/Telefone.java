@@ -22,6 +22,8 @@ public class Telefone {
 	@JoinColumn(name="usuario_id")
 	private Usuario usuario;
 
+	public Telefone () {}
+	
 	public Telefone(String ddd, String numero) {
 		super();
 		this.ddd = ddd;

@@ -29,7 +29,9 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-jersey')
-	compile('org.springframework.boot:spring-boot-starter-security')
+	compile('com.jayway.restassured:json-schema-validator:2.9.0') 
+	compile('com.jayway.restassured:spring-mock-mvc:2.9.0') 
+	compile('org.apache.httpcomponents:httpclient:4.5.2')
 	runtime('org.hsqldb:hsqldb')
 	testCompile('org.springframework.boot:spring-boot-starter-test') 
 	testCompile('org.mockito:mockito-all') 

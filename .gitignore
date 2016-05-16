@@ -2,9 +2,10 @@
 .settings/
 .classpath
 bin/
+.gradle/
 gradle/
 target/
 .project
-
+build/
 
 
